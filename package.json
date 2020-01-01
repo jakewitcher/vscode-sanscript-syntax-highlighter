@@ -1,0 +1,25 @@
+{
+    "name": "sanscript-syntax-highlighter",
+    "displayName": "Sanscript Syntax Highlighter",
+    "description": "syntax highlight support for sanscript, a scripting language used by Dexterity applications",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sanscript",
+            "aliases": ["Sanscript", "sanscript"],
+            "extensions": [".function",".procedure"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sanscript",
+            "scopeName": "source.sanscript",
+            "path": "./syntaxes/sanscript.tmLanguage.json"
+        }]
+    }
+}
