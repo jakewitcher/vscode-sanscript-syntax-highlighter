@@ -33,7 +33,7 @@
                 },
                 {
                     "name": "keyword.other.sanscript",
-                    "match": "\\b(local|in|inout|out|of|table|file)\\b"
+                    "match": "\\b(local|in|inout|out|of)\\b"
                 }
             ]
         },
@@ -63,16 +63,12 @@
         "variables": {
             "patterns": [
                 {
-                    "name": "variable.name.sanscript",
-                    "match": "(?<=boolean |string |integer |currency |dollar |long )\\w+"
+                    "name": "variable.language.sanscript",
+                    "match": "(?<=table|file)\\s+\\w+"
                 },
                 {
-                    "name": "variable.language.sanscript",
-                    "match": "(?<=table |file )\\w+"
-                },
-                {
-                    "name": "variable.language.sanscript",
-                    "match": "\\w+(?= of)"
+                    "name": "variable.parameter",
+                    "match": "[\\w\\/]+(?= of)|'[\\w\\s\\/]+'(?= of)"
                 }
             ]
         },
@@ -80,15 +76,15 @@
             "patterns": [
                 {
                     "name": "support.type.sanscript",
-                    "match": "\\b(boolean|string|integer|currency|dollar|long)\\b"
+                    "match": "\\b(boolean|string|integer|currency|dollar|long|file|table)\\b"
                 },
                 {
                     "name": "support.type.sanscript",
-                    "match": "(?<=local |in |out| inout)\\w+|\\b(file|table)\\b"
+                    "match": "(?<=local|in|ou|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+\\'[\\w\\s\\/]+'"
                 },
                 {
                     "name": "support.function.sanscript",
-                    "match": "\\b(err|call|clear|range clear|set|to|save|get first|get last|get next|get prev|get|change first|change last|change next|change prev|change|range start|range end)\\b"
+                    "match": "\\b(err|empty|call|clear|range clear|set|to|save|get first|get last|get next|get prev|get|change first|change last|change next|change prev|change|range start|range end)\\b"
                 }
             ]
         },
@@ -106,7 +102,11 @@
                 },
                 {
                     "name": "keyword.operator.sanscript",
-                    "match": "[\\+\\*-\\<>]|(?<![a-zA-z])/(?![a-zA-z])"
+                    "match": "[\\+\\*-\\<>]"
+                },
+                {
+                    "name": "keyword.operator.sanscript",
+                    "match": "(?<=\\s)\\/(?=\\s)"
                 }
             ]
         }
