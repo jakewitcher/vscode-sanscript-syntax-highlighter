@@ -67,7 +67,7 @@
                     "match": "(?<=table|file)\\s+\\w+"
                 },
                 {
-                    "name": "variable.parameter",
+                    "name": "variable.parameter.sanscript",
                     "match": "[\\w\\/]+(?= of)|'[\\w\\s\\/]+'(?= of)"
                 }
             ]
@@ -80,7 +80,7 @@
                 },
                 {
                     "name": "support.type.sanscript",
-                    "match": "(?<=local|in|ou|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+\\'[\\w\\s\\/]+'"
+                    "match": "(?<=local|in|out|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+\\'[\\w\\s\\/]+'"
                 },
                 {
                     "name": "support.function.sanscript",

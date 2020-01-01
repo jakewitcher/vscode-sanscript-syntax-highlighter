@@ -1,0 +1,72 @@
+---
+$schema: "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json"
+name: "Sanscript"
+patterns:
+    - include: "#keywords"
+    - include: "#strings"
+    - include: "#constants"
+    - include: "#supports"
+    - include: "#comments"
+    - include: "#variables"
+    - include: "#operators"
+repository:
+    keywords:
+        patterns:
+            - name: keyword.control.sanscript
+              match: >
+                  \b(while|do|end while|
+                  for|end for|
+                  if|then|else if|elseif|else|end if|
+                  case|end case|
+                  try|catch|end try\b
+            - name: keyword.other.sanscript
+              match: \b(local|in|inout|out|of)\b
+    strings:
+        name: string.quoted.double.sanscript
+        begin: '"'
+        end: '"'
+        patterns:
+            - name: constant.character.escape.sanscript
+              match: \\.
+    constants:
+        patterns:
+            - name: constant.numeric.sanscript
+              match: (?<!\w)\d+
+            - name: constant.language.sanscript
+              match: \b(true|false|OKAY|MISSING|EOF)\b
+    variables:
+        patterns:
+            - name: variable.language.sanscript
+              match: >
+                  (?<=table|file)\s+\w+
+            - name: variable.parameter.sanscript
+              match: >
+                  [\w\/]+(?= of)|'[\w\s\/]+'(?= of)
+    supports:
+        patterns:
+            - name: support.type.sanscript
+              match: \b(boolean|string|integer|currency|dollar|long|file|table)\b
+            - name: support.type.sanscript
+              match: (?<=local|in|out|inout)\s+\w+|(?<=local|in|out|inout)\s+\'[\w\s\/]+'
+            - name: support.function.sanscript
+              match: >
+                  \b(err|empty|call|clear|set|to|save|
+                  get first|get last|get next|get prev|get|
+                  change first|change last|change next|change prev|change|
+                  range start|range end|range clear)\b
+    comments:
+        name: comment.block.sanscript
+        begin: "{"
+        end: "}"
+        patterns:
+            - include: "#comments"
+    operators:
+        patterns:
+            - name: keyword.operator.sanscript
+              match: \b(and|or|not)\b
+            - name: keyword.operator.sanscript
+              match: >
+                  [\+\*-\<>]
+            - name: keyword.operator.sanscript
+            - match: (?<=\s)\/(?=\s)
+    scopeName: source.sanscript
