@@ -10,16 +10,29 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "sanscript",
-            "aliases": ["Sanscript", "sanscript"],
-            "extensions": [".function",".procedure"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "sanscript",
-            "scopeName": "source.sanscript",
-            "path": "./syntaxes/sanscript.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "sanscript",
+                "aliases": [
+                    "Sanscript",
+                    "sanscript"
+                ],
+                "extensions": [
+                    ".function",
+                    ".procedure"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "sanscript",
+                "scopeName": "source.sanscript",
+                "path": "./syntaxes/sanscript.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^3.13.1"
     }
 }
