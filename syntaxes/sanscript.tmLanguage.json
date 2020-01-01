@@ -1,119 +1,119 @@
 {
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Sanscript",
-  "patterns": [
-    {
-      "include": "#keywords"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#constants"
-    },
-    {
-      "include": "#supports"
-    },
-    {
-      "include": "#comments"
-    },
-    {
-      "include": "#variables"
-    },
-    {
-      "include": "#operators"
-    }
-  ],
-  "repository": {
-    "keywords": {
-      "patterns": [
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Sanscript",
+    "patterns": [
         {
-          "name": "keyword.control.sanscript",
-          "match": "\\b(while|do|end while|for|end for|if|then|else if|elseif|else|end if|case|end case|try|catch|end try| abort close| abort script|repeat|until)\\b"
+            "include": "#keywords"
         },
         {
-          "name": "keyword.other.sanscript",
-          "match": "\\b(local|in|inout|out|precision of|of)\\b"
-        }
-      ]
-    },
-    "strings": {
-      "name": "string.quoted.double.sanscript",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape.sanscript",
-          "match": "\\\\."
-        }
-      ]
-    },
-    "constants": {
-      "patterns": [
-        {
-          "name": "constant.numeric.sanscript",
-          "match": "(?<!\\w)\\d+"
+            "include": "#strings"
         },
         {
-          "name": "constant.language.sanscript",
-          "match": "\\b(true|false|OKAY|MISSING|EOF|LOCKED|DUPLICATE|RECORDCHANGED)\\b"
+            "include": "#constants"
+        },
+        {
+            "include": "#supports"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#operators"
         }
-      ]
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.sanscript",
+                    "match": "\\b(while|do|end while|for|end for|if|then|else if|elseif|else|end if|case|end case|try|catch|end try| abort close| abort script|repeat|until)\\b"
+                },
+                {
+                    "name": "keyword.other.sanscript",
+                    "match": "\\b(local|in|inout|out|precision of|of)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.sanscript",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.sanscript",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.sanscript",
+                    "match": "(?<!\\w)\\d+"
+                },
+                {
+                    "name": "constant.language.sanscript",
+                    "match": "\\b(true|false|OKAY|MISSING|EOF|LOCKED|DUPLICATE|RECORDCHANGED)\\b"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.language.sanscript",
+                    "match": "(?<=table|file)\\s+\\w+"
+                },
+                {
+                    "name": "variable.parameter.sanscript",
+                    "match": "[\\w\\/]+(?= of|\\[)|'[\\w\\s\\/]+'(?= of|\\[)"
+                }
+            ]
+        },
+        "supports": {
+            "patterns": [
+                {
+                    "name": "support.type.sanscript",
+                    "match": "\\b(boolean|string|integer|currency|dollar|long|file|table|form|window|application|palettes|windows|item|line|menu|error|command|name|sproc|component|record|script|macro|title|system exception)\\b"
+                },
+                {
+                    "name": "support.type.sanscript",
+                    "match": "(?<=local|in|out|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+'[\\w\\s\\/]+'"
+                },
+                {
+                    "name": "support.function.sanscript",
+                    "match": "\\b(err|empty|call|set|to|save|first|last|next|prev|get|change|range start|range end|range clear|increment|by|abs|addmonth|anonymous|add|arraysize|ascii|ask|assert|assign as key|assign|beep|begingroup|bitclear|bitset|bittest|changed|char|check|clear changes|checkedfield|checkedmenu|clear|close|column|continue|copy|countitems|countrecords|clear force change|currencydecimals|delete|currentcomponent|datatype|day|debug|decrement|default form to|default roundmode to|default window to|diff|disable|dow|edit|debugger stop|enable|editexisting|endgroup|eom|error|execute|exit|extern|expand|fill|filled|finddata|finditem|focus|force changes|format|getfile|hide|getmsg|getstring|havetransactions|force change|hex|hide|hour|import|insert|isalpah|isopen|itemdata|itemname|keynumber|open|length|lock|lower|max|min|minute|missing|mkdate|month|move|naterr|new|old|with|open|override|range copy|pad|pos|physicalname|precision|range where|range|redraw|reject|release|remove|resize|restart|return|round|run|delayed|savefile|scale|second|setdate|show|str|substitute|substring|sum range|sysdate|sysdatetime|system|systime|technicalname|this|throw|transaction begin|transaction commit|transaction|rollback|trim|truncate|uncheck|unlock|upper|value|warning|year)\\b"
+                }
+            ]
+        },
+        "comments": {
+            "name": "comment.block.sanscript",
+            "begin": "{",
+            "end": "}",
+            "patterns": [
+                {
+                    "include": "#comments"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.sanscript",
+                    "match": "\\b(and|or|not)\\b"
+                },
+                {
+                    "name": "keyword.operator.sanscript",
+                    "match": "[\\+\\*-\\<>]"
+                },
+                {
+                    "name": "keyword.operator.sanscript",
+                    "match": "(?<=\\s)\\/(?=\\s)"
+                }
+            ]
+        }
     },
-    "variables": {
-      "patterns": [
-        {
-          "name": "variable.language.sanscript",
-          "match": "(?<=table|file)\\s+\\w+"
-        },
-        {
-          "name": "variable.parameter.sanscript",
-          "match": "[\\w\\/]+(?= of)|'[\\w\\s\\/]+'(?= of)"
-        }
-      ]
-    },
-    "supports": {
-      "patterns": [
-        {
-          "name": "support.type.sanscript",
-          "match": "\\b(boolean|string|integer|currency|dollar|long|file|table|form|window|application|palettes|windows|item|line|menu|error|command|name|sproc|component|record|script|macro|title|system exception)\\b"
-        },
-        {
-          "name": "support.type.sanscript",
-          "match": "(?<=local|in|out|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+'[\\w\\s\\/]+'"
-        },
-        {
-          "name": "support.function.sanscript",
-          "match": "\\b(err|empty|call|set|to|save|first|last|next|prev|get|change|range start|range end|range clear|increment|by|abs|addmonth|anonymous|add|arraysize|ascii|ask|assert|assign as key|assign|beep|begingroup|bitclear|bitset|bittest|changed|char|check|clear changes|checkedfield|checkedmenu|clear|close|column|continue|copy|countitems|countrecords|clear force change|currencydecimals|delete|currentcomponent|datatype|day|debug|decrement|default form to|default roundmode to|default window to|diff|disable|dow|edit|debugger stop|enable|editexisting|endgroup|eom|error|execute|exit|extern|expand|fill|filled|finddata|finditem|focus|force changes|format|getfile|hide|getmsg|getstring|havetransactions|force change|hex|hide|hour|import|insert|isalpah|isopen|itemdata|itemname|keynumber|open|length|lock|lower|max|min|minute|missing|mkdate|month|move|naterr|new|old|with|open|override|range copy|pad|pos|physicalname|precision|range where|range|redraw|reject|release|remove|resize|restart|return|round|run|delayed|savefile|scale|second|setdate|show|str|substitute|substring|sum range|sysdate|sysdatetime|system|systime|technicalname|this|throw|transaction begin|transaction commit|transaction|rollback|trim|truncate|uncheck|unlock|upper|value|warning|year)\\b"
-        }
-      ]
-    },
-    "comments": {
-      "name": "comment.block.sanscript",
-      "begin": "{",
-      "end": "}",
-      "patterns": [
-        {
-          "include": "#comments"
-        }
-      ]
-    },
-    "operators": {
-      "patterns": [
-        {
-          "name": "keyword.operator.sanscript",
-          "match": "\\b(and|or|not)\\b"
-        },
-        {
-          "name": "keyword.operator.sanscript",
-          "match": "[\\+\\*-\\<>]"
-        },
-        {
-          "name": "keyword.operator.sanscript",
-          "match": "(?<=\\s)\\/(?=\\s)"
-        }
-      ]
-    }
-  },
-  "scopeName": "source.sanscript"
+    "scopeName": "source.sanscript"
 }
