@@ -13,12 +13,10 @@ repository:
     keywords:
         patterns:
             - name: keyword.control.sanscript
-              match: >
-                  \b(while|do|end while|
-                  for|end for|
-                  if|then|else if|elseif|else|end if|
-                  case|end case|
-                  try|catch|end try\b
+              match: >-
+                  \b(while|do|end while|for|end
+                  for|if|then|else if|elseif|else|end
+                  if|case|end case|try|catch|end try)\b
             - name: keyword.other.sanscript
               match: \b(local|in|inout|out|of)\b
     strings:
@@ -37,23 +35,24 @@ repository:
     variables:
         patterns:
             - name: variable.language.sanscript
-              match: >
+              match: >-
                   (?<=table|file)\s+\w+
             - name: variable.parameter.sanscript
-              match: >
+              match: >-
                   [\w\/]+(?= of)|'[\w\s\/]+'(?= of)
     supports:
         patterns:
             - name: support.type.sanscript
               match: \b(boolean|string|integer|currency|dollar|long|file|table)\b
             - name: support.type.sanscript
-              match: (?<=local|in|out|inout)\s+\w+|(?<=local|in|out|inout)\s+\'[\w\s\/]+'
+              match: (?<=local|in|out|inout)\s+\w+|(?<=local|in|out|inout)\s+'[\w\s\/]+'
             - name: support.function.sanscript
-              match: >
-                  \b(err|empty|call|clear|set|to|save|
-                  get first|get last|get next|get prev|get|
-                  change first|change last|change next|change prev|change|
-                  range start|range end|range clear)\b
+              match: >-
+                  \b(err|empty|call|clear|set|to|save|get
+                  first|get last|get next|get prev|get|change
+                  first|change last|change next|change
+                  prev|change|range start|range end|range
+                  clear|increment|by)\b
     comments:
         name: comment.block.sanscript
         begin: "{"
@@ -65,8 +64,8 @@ repository:
             - name: keyword.operator.sanscript
               match: \b(and|or|not)\b
             - name: keyword.operator.sanscript
-              match: >
+              match: >-
                   [\+\*-\<>]
             - name: keyword.operator.sanscript
-            - match: (?<=\s)\/(?=\s)
-    scopeName: source.sanscript
+              match: (?<=\s)\/(?=\s)
+scopeName: source.sanscript

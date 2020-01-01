@@ -29,7 +29,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.sanscript",
-                    "match": "\\b(while|do|end while|for|end for|if|then|else if|elseif|else|end if|case|end case|try|catch|end try|local|in|inout|out)\\b"
+                    "match": "\\b(while|do|end while|for|end for|if|then|else if|elseif|else|end if|case|end case|try|catch|end try)\\b"
                 },
                 {
                     "name": "keyword.other.sanscript",
@@ -80,11 +80,11 @@
                 },
                 {
                     "name": "support.type.sanscript",
-                    "match": "(?<=local|in|out|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+\\'[\\w\\s\\/]+'"
+                    "match": "(?<=local|in|out|inout)\\s+\\w+|(?<=local|in|out|inout)\\s+'[\\w\\s\\/]+'"
                 },
                 {
                     "name": "support.function.sanscript",
-                    "match": "\\b(err|empty|call|clear|range clear|set|to|save|get first|get last|get next|get prev|get|change first|change last|change next|change prev|change|range start|range end)\\b"
+                    "match": "\\b(err|empty|call|clear|set|to|save|get first|get last|get next|get prev|get|change first|change last|change next|change prev|change|range start|range end|range clear|increment|by)\\b"
                 }
             ]
         },
@@ -92,7 +92,11 @@
             "name": "comment.block.sanscript",
             "begin": "{",
             "end": "}",
-            "patterns": [{ "include": "#comments" }]
+            "patterns": [
+                {
+                    "include": "#comments"
+                }
+            ]
         },
         "operators": {
             "patterns": [
