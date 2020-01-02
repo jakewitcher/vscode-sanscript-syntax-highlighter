@@ -85,6 +85,10 @@
                 {
                     "name": "support.function.sanscript",
                     "match": "\\b(err|empty|call|set|to|save|first|last|next|prev|get|change|range start|range end|range clear|increment|by|abs|addmonth|anonymous|add|arraysize|ascii|ask|assert|assign as key|assign|beep|begingroup|bitclear|bitset|bittest|changed|char|check|clear changes|checkedfield|checkedmenu|clear|close|column|continue|copy|countitems|countrecords|clear force change|currencydecimals|delete|currentcomponent|datatype|day|debug|decrement|default form to|default roundmode to|default window to|diff|disable|dow|edit|debugger stop|enable|editexisting|endgroup|eom|error|execute|exit|extern|expand|fill|filled|finddata|finditem|focus|force changes|format|getfile|hide|getmsg|getstring|havetransactions|force change|hex|hide|hour|import|insert|isalpah|isopen|itemdata|itemname|keynumber|open|length|lock|lower|max|min|minute|missing|mkdate|month|move|naterr|new|old|with|open|override|range copy|pad|pos|physicalname|precision|range where|range|redraw|reject|release|remove|resize|restart|return|round|run|delayed|savefile|scale|second|setdate|show|str|substitute|substring|sum range|sysdate|sysdatetime|system|systime|technicalname|this|throw|transaction begin|transaction commit|transaction|rollback|trim|truncate|uncheck|unlock|upper|value|warning|year)\\b"
+                },
+                {
+                    "name": "support.function.sanscript",
+                    "match": "(Activity|AutoComplete|Color|COM|Command|CommandBar|CommandList|Currency|Defaults|DexObject|Dict|Exception|Field|File|FileList|FileType|Form|Import|Help|IP|Launch|ListView|Login|Mail|MAPI|MenuBar|Menu|OLE|Path|Printer|Registry|Report|Resource|Runtime|ScriptLog|ScriptProfile|Shell|SQL|Table|TextFile|Timer|Tools|TreeView|Trigger|Utility|Window|WindowGroup|WinHelp)_\\w+(?=\\()"
                 }
             ]
         },

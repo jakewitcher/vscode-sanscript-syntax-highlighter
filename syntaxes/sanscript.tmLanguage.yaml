@@ -56,6 +56,9 @@ repository:
                   change|hex|hide|hour|import|insert|isalpah|isopen|itemdata|itemname|keynumber|open|length|lock|lower|max|min|minute|missing|mkdate|month|move|naterr|new|old|with|open|override|range
                   copy|pad|pos|physicalname|precision|range where|range|redraw|reject|release|remove|resize|restart|return|round|run|delayed|savefile|scale|second|setdate|show|str|substitute|substring|sum
                   range|sysdate|sysdatetime|system|systime|technicalname|this|throw|transaction begin|transaction commit|transaction|rollback|trim|truncate|uncheck|unlock|upper|value|warning|year)\b
+            - name: support.function.sanscript
+              match: >-
+                  (Activity|AutoComplete|Color|COM|Command|CommandBar|CommandList|Currency|Defaults|DexObject|Dict|Exception|Field|File|FileList|FileType|Form|Import|Help|IP|Launch|ListView|Login|Mail|MAPI|MenuBar|Menu|OLE|Path|Printer|Registry|Report|Resource|Runtime|ScriptLog|ScriptProfile|Shell|SQL|Table|TextFile|Timer|Tools|TreeView|Trigger|Utility|Window|WindowGroup|WinHelp)_\w+(?=\()
     comments:
         name: comment.block.sanscript
         begin: "{"
